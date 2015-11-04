@@ -5,7 +5,10 @@ import sys
 from raven import Client
 from server import settings
 
-sentry_client = Client(settings['sentry'])
+try:
+    sentry_client = Client(settings['sentry'])
+except:
+    pass
 
 
 def sentry():

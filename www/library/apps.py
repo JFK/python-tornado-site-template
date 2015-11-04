@@ -35,6 +35,9 @@ def load(name, settings):
             routes.append((r"%s" % uri, getattr(handler, name)))
 
     application = Application(routes, **settings)
-    application.sentry_client = AsyncSentryClient(settings['sentry'])
+    try:
+        application.sentry_client = AsyncSentryClient(settings['sentry'])
+    except:
+        pass
 
     return application, server['port'], server['worker_processes']
