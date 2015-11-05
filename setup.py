@@ -6,6 +6,6 @@
 
 from distutils.core import setup
 
-setup(name='orutone.com',
+setup(name='site',
       version='0.0.0',
       )
