@@ -28,14 +28,13 @@ def app(name, settings):
             server.update(app_conf[settings['env']][name])
 
     ui = {'ui_modules': {}, 'ui_methods': {}}
-    for ui_name in ui.keys()
-        for package in server[ui_name].keys():
-            for name in server[ui_name][package].keys():
-                x = server[ui][package]
-                xx = importlib.import_module("lib.%s.%s" % (ui_name, package))
-                ui[ui_name].update({
-                    name: getattr(xx, x))
-                })
+    for ui_key in ui.keys():
+        for package in server.get(ui_key, {}).keys():
+            for key in server[ui_key][package].keys():
+                name = server[ui_key][package][key]
+                module= importlib.import_module("mylib.%s.%s" % \
+                        (ui_key, package))
+                ui[ui_key].update({key: getattr(module, name)})
     settings.update(ui)
 
     routes = []
@@ -54,5 +53,5 @@ def app(name, settings):
     return dict(
         app = application, 
         port = server['port'],
-        worker_processes = server['worker_processes']
+        worker = server['worker_processes']
     )

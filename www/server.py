@@ -9,7 +9,7 @@ from tornado.ioloop import IOLoop
 from tornado.options import define, options
 import logging
 import importlib
-from lib import conf, loader
+from mylib import conf, loader
 
 
 settings = conf.load()
@@ -29,9 +29,9 @@ def main(name):
 
     logging.warning('Starting %s app on %d port...' % (name, app['port']))
 
-    server = HTTPServer(app['application'])
+    server = HTTPServer(app['app'])
     server.bind(app['port'])
-    server.start(app['worker_processes'])
+    server.start(app['worker'])
     IOLoop.instance().current().start()
 
 if __name__ == "__main__":
@@ -40,4 +40,4 @@ if __name__ == "__main__":
         options.parse_command_line()
         main(options.app)
     except:
-        importlib.import_module('lib.logger').sentry()
+        importlib.import_module('mylib.logger').sentry()
