@@ -6,16 +6,7 @@
 
 from handlers import BaseHandler, ValidationError
 from models.user import User
-from tornado.web import UIModule
 import tornado.auth
-
-
-class ErrorsModule(UIModule):
-    u"""エラー処理用のモジュール
-    """
-    def render(self, errors):
-        return self.render_string("account/modules/errors.html",
-                                  errors=errors)
 
 
 class CommonHandler(BaseHandler):
@@ -31,9 +22,6 @@ class CommonHandler(BaseHandler):
                 password=False,
                 unknown=False
                 )
-        self.load_ui_modules(dict(
-            Errors=ErrorsModule
-        ))
 
     def render_setting(self, success=False):
         self.render("account/setting.html", errors=self.ERRORS,

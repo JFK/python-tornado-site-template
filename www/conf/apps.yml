@@ -2,6 +2,9 @@ common:
     main:
         worker_processes: 1
         port: 8000
+        ui_modules:
+            account: 
+                Errors: AccountErrorsModule
         handlers:
             top:
                 /: TopHandler
