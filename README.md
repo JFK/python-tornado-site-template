@@ -1,4 +1,4 @@
-# A designe Pattern on python-tornado
+# A designe pattern on python-tornado
 
 [![Build status](https://travis-ci.org/JFK/python-tornado-site-template.svg?branch=master)](https://travis-ci.org/JFK/python-tornado-site-template)
 
