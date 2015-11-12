@@ -18,8 +18,8 @@ class TestMongoEngine(unittest.TestCase):
 
     def setUp(self):
         # データベースに接続
-        addr = addr if addr else '127.0.0.1'
-        port = port if port else 27017
+        addr = '127.0.0.1'
+        port = 27017
         connect('test', host=addr, port=port)
         self.conn = get_connection()
         self.db = get_db()
