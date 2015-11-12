@@ -1,6 +1,6 @@
 # A designe Pattern on python-tornado
 
-[![Build status](https://travis-ci.org/JFK/python-tornado-site-template.svg?branch=master)][https://travis-ci.org/JFK/python-tornado-site-template]
+[![Build status](https://travis-ci.org/JFK/python-tornado-site-template.svg?branch=master)](https://travis-ci.org/JFK/python-tornado-site-template)
 
 If you want to use vagrant to setup, visit [python-tornado-mongodb-ansible-vagrant](https://github.com/JFK/python-tornado-mongodb-ansible-vagrant).
 
