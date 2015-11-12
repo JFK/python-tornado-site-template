@@ -18,9 +18,7 @@ class TestMongoEngine(unittest.TestCase):
 
     def setUp(self):
         # データベースに接続
-        addr = os.environ.get('MONGO_PORT_27017_TCP_ADDR')
-        addr = addr if addr else 'localhost'
-        port = os.environ.get('MONGO_PORT_27017_TCP_PORT')
+        addr = addr if addr else '127.0.0.1'
         port = port if port else 27017
         connect('test', host=addr, port=port)
         self.conn = get_connection()

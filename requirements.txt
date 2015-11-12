@@ -1,4 +1,4 @@
-tornado==4.2.1
+tornado==4.3.0
 python-logstash==0.4.5
 raven==5.7.2
 mongoengine==0.10.0
