@@ -1,12 +1,13 @@
-box: wercker/python
+box: python:3.4-wheezy
 services:
    - id: mongo
 build:
   steps:
-    - virtualenv:
-        name: setup virtual environment
     - pip-install:
         requirements_file: "requirements.txt"
+    - script:
+        name: unit test
+        code: tox
     - script:
         name: echo python information
         code: |
